@@ -39,6 +39,21 @@ func main() {
 	fmt.Println("=====Function New=====")
 	address5 := new(Address)
 	fmt.Println(address5)
+
+	// Pointer function
+	fmt.Println("=====Pointer function=====")
+	var address6 = Address{
+		city:     "Bogor",
+		province: "Jawa Barat",
+		country:  "",
+	}
+	ChangeCountryToIndonesian(&address6)
+	fmt.Println(address6)
+}
+
+// Pointer function
+func ChangeCountryToIndonesian(address *Address) {
+	address.country = "Indonesian"
 }
 
 type Address struct {
